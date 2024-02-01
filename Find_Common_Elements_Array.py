@@ -21,6 +21,9 @@ Array_3 = [1,2,3,4]
 common_elements = set(Array_1) & set(Array_2) & set(Array_3)
 print(list(common_elements))
 
+# Version 2
+
+
 
 
 
