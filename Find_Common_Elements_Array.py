@@ -16,14 +16,17 @@ Array can be of any size and by default there should be two arrays for compariso
 
 # Milan Patel version of the solution
 # Version 1, using "set".
-'''Array_1 = [1,2,3,2,1]
+Array_1 = [1,2,3,2,1]
 Array_2 = [1,2,3]
-Array_3 = [1,2,3,4]'''
+Array_3 = [1,2,3,4]
 
-# common_elements = set(Array_1) & set(Array_2) & set(Array_3)
-# print(list(common_elements))
+common_elements = set(Array_1) & set(Array_2) & set(Array_3)
+print(list(common_elements))
 
-# Version 2
+
+###########################################################
+
+# Version 2 using for and if loops with a dedicated method.
 
 def find_common_elements(arr1, arr2, arr3):
     common_elements = []
@@ -42,17 +45,7 @@ def find_common_elements(arr1, arr2, arr3):
 
     return common_elements
 
-# Example usage:
-Array_1 = [1, 2, 3, 2, 1]
-Array_2 = [1, 2, 3]
-Array_3 = [1, 2, 3, 4]
-
 result = find_common_elements(Array_1, Array_2, Array_3)
 print(result)
 
-
-
-
-
-
-
+###########################################################
