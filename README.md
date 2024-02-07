@@ -22,6 +22,10 @@ Welcome to the Python Learning Playground! 🚀 This repository is your go-to re
 
 Tweak, experiment, and challenge yourself to enhance your Python proficiency.
 
+## Get the Codes in your PC! Clone with:
+
+git clone https://github.com/yourusername/python-learning-playground.git
+
 ## Contribution Guidelines 🤝 
 
 Contributions are welcome! 
