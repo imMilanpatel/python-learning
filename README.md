@@ -44,5 +44,6 @@ Have questions or suggestions? Feel free to reach out to me:
 
 - **Name:** Milan Patel 
 - **Email:** milanpatel3116@gmail.com
+- **LinkedIn Profile:** https://www.linkedin.com/in/milan-patel31/
 
 Let's make learning Python a fun and collaborative experience! Happy coding! 🚀
