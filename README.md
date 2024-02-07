@@ -24,7 +24,7 @@ Tweak, experiment, and challenge yourself to enhance your Python proficiency.
 
 ## Get the Codes in your PC! Clone with:
 
-git clone https://github.com/yourusername/python-learning-playground.git
+`git clone https://github.com/imMilanpatel/python-learning`
 
 ## Contribution Guidelines 🤝 
 
