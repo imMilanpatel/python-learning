@@ -65,6 +65,21 @@ print(f_string_result)
 format_method_result_ = "Hello, my name is {}, I am {} years old, and I live in {}.".format(name, age, city)
 print(format_method_result_)
 
+#############################################################################################
 
 # 4. Write a program that adds 'ing' to every string.
+def add_ing_to_strings(strings):
+    modified_strings = [s + 'ing' for s in strings]
+    return modified_strings
+
+# Example usage:
+input_strings = ["read", "kiss", "swim", "play"]
+result_strings = add_ing_to_strings(input_strings)
+
+# Print the output
+print("Original strings:", input_strings)
+print("Strings with 'ing':", result_strings)
+
+
+
 # 5. Write a program that replaces every 's' in a string with a '$'
