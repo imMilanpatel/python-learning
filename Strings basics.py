@@ -30,6 +30,25 @@ each_character(input_string)
 
 
 # 2. Create a string & find the length of it.
+# Using inbuild function
+lenght = len(input_string)
+print(f"String lenth found using inbuilt function is {lenght}")
+
+# Using for loop and a method
+def string_length(string):
+    str_len = 0
+    for characters in string:
+        str_len  += 1
+    print(f"String lenght calculated using custom method is {str_len}")
+
+string_length(input_string)
+
+# Using Join method and without for loop
+def string_length_cal(string):
+    str_len = sum(1 for _ in ''.join(string))
+    print(f"String length calculated using join method without for loop is {str_len}")
+
+string_length_cal(input_string)
 
 
 
