@@ -50,10 +50,21 @@ def string_length_cal(string):
 
 string_length_cal(input_string)
 
-
-
-
+#############################################################################################
 
 # 3. Print a string with different predefined variables in it.
+name = "Milan Patel"
+age = 27
+city = "Tiruchirappalli,Tamilnadu,India"
+
+# Using f-string
+f_string_result = f"Hello, my name is {name}, I am {age} years old, and I live in {city}."
+print(f_string_result)
+
+# Using format method
+format_method_result_ = "Hello, my name is {}, I am {} years old, and I live in {}.".format(name, age, city)
+print(format_method_result_)
+
+
 # 4. Write a program that adds 'ing' to every string.
 # 5. Write a program that replaces every 's' in a string with a '$'
