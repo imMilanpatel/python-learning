@@ -19,11 +19,7 @@ def each_character(string):
     print('\n'.join(string))
 
 # Input String for the challenge 1
-input_string = "Hello Python learner"
-each_character(input_string)
-
-# Input String for the challenge 1
-input_string = "Hello Python learner"
+input_string = "Hello Python learners, Let's start our learnings"
 each_character(input_string)
 
 #########################################################
@@ -32,14 +28,14 @@ each_character(input_string)
 # 2. Create a string & find the length of it.
 # Using inbuild function
 lenght = len(input_string)
-print(f"String lenth found using inbuilt function is {lenght}")
+print(f"String length found using inbuilt function is {lenght}")
 
 # Using for loop and a method
 def string_length(string):
     str_len = 0
     for characters in string:
         str_len  += 1
-    print(f"String lenght calculated using custom method is {str_len}")
+    print(f"String length calculated using custom method is {str_len}")
 
 string_length(input_string)
 
@@ -80,6 +76,11 @@ result_strings = add_ing_to_strings(input_strings)
 print("Original strings:", input_strings)
 print("Strings with 'ing':", result_strings)
 
-
+##############################################################################################
 
 # 5. Write a program that replaces every 's' in a string with a '$'
+modified_string = input_string.replace("s","$")
+print(f"Actual Input String {input_string}")
+print(f"Modified Input String {modified_string}")
+
+###############################################################################################
