@@ -46,10 +46,10 @@ calculator_instance.display_results()
 
 # Version 1
 cube_of_39 = 39 * 39 * 39
-print(f"Cube of 39 using regular way is {cube_of_39}")
+print(f"Cube of the number is using regular way is {cube_of_39}")
 
 # Version 2
 result = pow(39,3)
-print(f"Cube of 39 using 'pow' power method is {result}")
+print(f"Cube of the number using 'pow' power method is {result}")
 
 ####################################################################################
