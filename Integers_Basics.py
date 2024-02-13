@@ -29,27 +29,35 @@ class Calculator:
             return "Cannot calculate remainder when divisor is zero"
 
     def display_results(self):
-        print(f"Sum: {self.calculate_sum()}")
-        print(f"Difference: {self.calculate_difference()}")
-        print(f"Product: {self.calculate_product()}")
-        print(f"Quotient: {self.calculate_quotient()}")
-        print(f"Remainder: {self.calculate_remainder()}")
-
-# Example usage
-calculator_instance = Calculator(10, 5)
-calculator_instance.display_results()
+        print(f"Sum: {self.calculate_sum():.2f}")
+        print(f"Difference: {self.calculate_difference():.2f}")
+        print(f"Product: {self.calculate_product():.2f}")
+        print(f"Quotient: {self.calculate_quotient():.2f}")
+        print(f"Remainder: {self.calculate_remainder():.2f}")
 
 ####################################################################
 # --------------------------------
 # Challenge 2: Find the cube of 39
 # --------------------------------
+class Cuberoot:
+    def __init__(self, number):
+        self.number = number
 
-# Version 1
-cube_of_39 = 39 * 39 * 39
-print(f"Cube of the number is using regular way is {cube_of_39}")
+    # Version 1
+    def normal_way(self):
+        cube_of_39 = self.number * self.number * self.number
+        return cube_of_39 
 
-# Version 2
-result = pow(39,3)
-print(f"Cube of the number using 'pow' power method is {result}")
+    # Version 2
+    def power_method(self):
+        result = pow(self.number,3)
+        return result
+    
+    # Display Result
+    def display_values(self):
+        print(f"Cube of the number is using regular way is {self.normal_way():.2f}")
+        print(f"Cube of the using 'pow' power method is {self.power_method():.2f}")
 
+cube_root_calculator = Cuberoot(39)
+cube_root_calculator.display_values()
 ####################################################################################
