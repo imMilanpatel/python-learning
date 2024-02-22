@@ -22,9 +22,9 @@ def test_amazon_login(browser):
     login_link.click()
 
     # Replace 'your_username' and 'your_password' with your actual Amazon login credentials
-    page.fill('input[id="ap_email"]', '')  # Enter username
+    page.fill('input[id="ap_email"]', 'your username or email')  # Enter username
     page.click('input[id="continue"]')  # Click continue button
-    page.fill('input[id="ap_password"]', '')  # Enter password
+    page.fill('input[id="ap_password"]', 'your password')  # Enter password
     page.click('input[id="signInSubmit"]')  # Click sign-in button
 
     # Optional: You can add an assertion to check if a specific element appears after successful login
