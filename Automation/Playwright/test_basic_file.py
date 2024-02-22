@@ -1,5 +1,6 @@
 import pytest
 from playwright.sync_api import sync_playwright
+import time
 
 @pytest.fixture(scope="function")
 def browser():
@@ -16,25 +17,22 @@ def test_amazon_login(browser):
     search_input = page.query_selector('input[id="twotabsearchtextbox"]')
     assert search_input is not None, "Search input element not found on the page"
 
-    # TODO: Add login steps
-    
     # Login Page
     login_link = page.query_selector('#nav-link-accountList')
     login_link.click()
 
     # Replace 'your_username' and 'your_password' with your actual Amazon login credentials
-    page.fill('input[id="ap_email"]', 'your_username')  # Enter username
+    page.fill('input[id="ap_email"]', '')  # Enter username
     page.click('input[id="continue"]')  # Click continue button
-    page.fill('input[id="ap_password"]', 'your_password')  # Enter password
+    page.fill('input[id="ap_password"]', '')  # Enter password
     page.click('input[id="signInSubmit"]')  # Click sign-in button
 
     # Optional: You can add an assertion to check if a specific element appears after successful login
-    greeting_element = page.query_selector('#nav-link-accountList .nav-line-1')
+    greeting_element = page.wait_for_selector('#nav-link-accountList-nav-line-1', timeout=10000)
     assert greeting_element is not None, "Login unsuccessful, greeting element not found"
 
-
     # Example validation: Check if the user is logged in
-    #assert "Hello, Sign in" not in page.title()
+    assert "Hello, Sign in" not in page.title()
 
 '''
 def test_product_checkout(browser):
