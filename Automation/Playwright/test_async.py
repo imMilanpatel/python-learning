@@ -1,5 +1,6 @@
 #FIXME: This file needs some more changes inorder to run it smoothly.You can refer this for template.
 # This is sample test which tests few functionality of the Amazon's E-Commerce site.
+
 import pytest
 from playwright.async_api import async_playwright
 
