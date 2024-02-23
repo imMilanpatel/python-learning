@@ -1,6 +1,9 @@
+#FIXME: This file needs some more changes inorder to run it smoothly.You can refer this for template.
+# This is sample test which tests few functionality of the Amazon's E-Commerce site.
+
 import pytest
 from playwright.sync_api import sync_playwright
-import time
+
 
 @pytest.fixture(scope="function")
 def browser():
@@ -22,7 +25,7 @@ def test_amazon_login(browser):
     login_link.click()
 
     # Replace 'your_username' and 'your_password' with your actual Amazon login credentials
-    page.fill('input[id="ap_email"]', 'your username or email')  # Enter username
+    page.fill('input[id="ap_email"]', 'your username')  # Enter username
     page.click('input[id="continue"]')  # Click continue button
     page.fill('input[id="ap_password"]', 'your password')  # Enter password
     page.click('input[id="signInSubmit"]')  # Click sign-in button
@@ -34,22 +37,39 @@ def test_amazon_login(browser):
     # Example validation: Check if the user is logged in
     assert "Hello, Sign in" not in page.title()
 
-'''
+
 def test_product_checkout(browser):
     page = browser.new_page()
-    page.goto('https://www.amazon.com')
+    page.goto('https://www.amazon.in')
 
     # TODO: Add steps to search for a product and add it to the cart
+    # Search for a product and add it to the cart (simplified example)
+    search_input = page.query_selector('input[name="field-keywords"]')
+    search_input.fill('asus')  # Replace 'your_product_name' with the actual product name
+    page.press('input[name="field-keywords"]', 'Enter')
 
+    # Click on the first product (assuming the search result is displayed)
+    product_link = page.query_selector_all('.s-search-results .s-result-item a', timeout=10000)
+    product_link.click()
+
+    # Add the product to the cart
+    add_to_cart_button = page.query_selector_all('#add-to-cart-button', timeout=5000)
+    add_to_cart_button.click()
+
+    # Wait for the cart icon to update with a timeout of 10 seconds
+    cart_icon = page.wait_for_selector('#nav-cart-count', timeout=10000)
+    assert cart_icon is not None, "Product not added to the cart successfully"
+    
     # Example validation: Check if the product is added to the cart
-    page.click('button[data-asin="YOUR_PRODUCT_ASIN"]')
-    assert "1 item in your cart" in page.title()
+    #page.click('button[data-asin="YOUR_PRODUCT_ASIN"]')
+    #assert "1 item in your cart" in page.title()
 
     # TODO: Add steps to perform checkout action
 
     # Example validation: Check if the checkout is successful
-    assert "Thank you for your purchase" in page.title()
+    #assert "Thank you for your purchase" in page.title()
 
+'''
 def test_search_functionality(browser):
     page = browser.new_page()
     page.goto('https://www.amazon.com')
@@ -75,4 +95,5 @@ def test_wishlist_functionality(browser):
 
     # Example validation: Check if the wishlist page displays the added product
     page.goto('https://www.amazon.com/gp/registry/wishlist/')
-    assert "YOUR_ADDED_PRODUCT_TITLE" in page.title() '''
+    assert "YOUR_ADDED_PRODUCT_TITLE" in page.title()
+'''
