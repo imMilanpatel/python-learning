@@ -13,6 +13,7 @@ def amazon_site_basic_tests(playwright: Playwright) -> None:
 
     # Site access
     page.goto("https://www.amazon.in/")
+    # FIXME: After login there is small captcha, which needs to be addressed.
 
     # Login functionality check
     page.get_by_role("link", name="Hello, sign in Account & Lists").click()
@@ -42,6 +43,7 @@ def amazon_site_basic_tests(playwright: Playwright) -> None:
     expect(page.locator("#search > div").first).to_be_visible()
     expect(page.locator("h1")).to_contain_text("\"laptops\"")
 
+    # FIXME: Wishlist dropdown issue, site says that it is now working at the moment.
     # Wishlist functionality check
     page.mouse.wheel(0,100)  
     with page.expect_popup() as page1_info:
