@@ -35,8 +35,6 @@ def amazon_site_basic_tests(playwright: Playwright) -> None:
     expect(page.locator("#nav-link-accountList-nav-line-1")).to_contain_text("Hello, Milan")
     expect(page.locator("#nav-global-location-popover-link")).to_contain_text("Deliver to Milan Tiruchira... 620008‌")
 
-    context.close()
-    browser.close()
 
     # Search functionality check
     page.get_by_placeholder("Search Amazon.in").fill("laptops")
@@ -50,9 +48,13 @@ def amazon_site_basic_tests(playwright: Playwright) -> None:
         page.get_by_role("link", name="Dell 14 Laptop, 12th Gen Intel Core i3-1215U Processor/8GB/512GB SSD/Intel UHD Graphics/14.0\"(35.56cm) FHD/Windows 11 + MSO'21/15 Month McAfee/Spill-Resistant Keyboard/Grey/Thin & Light 1.48kg", exact=True).click()
     page1 = page1_info.value
     expect(page1.get_by_text("Sponsored ‹ Back to results")).to_be_visible()
+    page.mouse.wheel(0,200)
     page1.get_by_label("Add to Wish List").click()
     page1.get_by_label("Close", exact=True).click()  
 
+    
+    context.close()
+    browser.close()
 # def test_product_checkout(browser):
 
 with sync_playwright() as playwright:
