@@ -30,13 +30,11 @@ def roman_numbers_to_integers(Roman_Number):
             curr_index = input_charcters
             curr_value = romans_numerics[Roman_Number[curr_index]]
             next_value = romans_numerics[Roman_Number[curr_index+1]]
-            print(curr_value)
-            print(next_value)
 
             if curr_value < next_value:
-                total -= curr_value
+                total = next_value - curr_value
             else:
-                total += curr_value
+                total = next_value + curr_value
 
         except IndexError:
             pass
