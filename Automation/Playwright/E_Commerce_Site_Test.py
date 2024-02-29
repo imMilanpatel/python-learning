@@ -3,6 +3,9 @@
 # Imports
 from playwright.sync_api import Playwright, sync_playwright, expect
 
+# Variables
+username = ""
+password = ""
 
 def amazon_site_basic_tests(playwright: Playwright) -> None:
 
@@ -18,13 +21,13 @@ def amazon_site_basic_tests(playwright: Playwright) -> None:
     # Login functionality check
     page.get_by_role("link", name="Hello, sign in Account & Lists").click()
     page.get_by_label("Email or mobile phone number").click()
-    page.get_by_label("Email or mobile phone number").fill("milanpatel3116@gmail.com")
+    page.get_by_label("Email or mobile phone number").fill(f"{username}")
     page.get_by_label("Continue").click()
     page.get_by_label("Password").click()
     page.get_by_label("Password").press("CapsLock")
     page.get_by_label("Password").fill("M")
     page.get_by_label("Password").press("CapsLock")
-    page.get_by_label("Password").fill("Milan+3196$")
+    page.get_by_label("Password").fill(f"{password}")
     page.get_by_label("Sign in").click()
 
     # Commented out OTP part for future implementation
