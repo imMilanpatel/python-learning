@@ -1,3 +1,12 @@
-'''
-This file will convert roman numbers to Integers
-'''
+
+def roman_numbers_to_integers(Roman_Number):
+    '''
+    This method will convert Roman Numbers to Integers.
+    Please provide your inputs in Roman Numerics only.
+    '''
+    #TODO: Implement the logic
+    return
+
+# Input
+Roman_num = input("Enter the Roman Number: ")
+Integer_num = roman_numbers_to_integers(Roman_num)
