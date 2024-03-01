@@ -3,6 +3,10 @@ Input : III
 Output : 3
 Explanation --> III == 3
 
+
+Input : MD
+Output : 1500
+Explnanation --> MD == 1500
 '''
 
 # Roman numbers equivalents in Integers
@@ -32,12 +36,12 @@ def roman_numbers_to_integers(Roman_Number):
             next_value = romans_numerics[Roman_Number[curr_index+1]]
 
             if curr_value < next_value:
-                total = next_value - curr_value
+                total += next_value - curr_value
             else:
-                total = next_value + curr_value
+                total += curr_value
 
         except IndexError:
-            pass
+            total += romans_numerics[Roman_Number[curr_index]]
         
     return print(total)
 
