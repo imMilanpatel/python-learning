@@ -64,9 +64,34 @@ gui_y = str(gui_height)
 gui.geometry(f"{gui_x}x{gui_y}")
 gui.resizable(width=False, height=False)
 
+########################################################################
+
+# For message box
+class CustomMessageBox(customtkinter.CTkToplevel):
+    def __init__(self, parent, title, message, callback = None):
+        super().__init__(parent)
+        self.title(title)
+
+        # Center the message box within the main window
+        parent.update_idletasks()
+        x = parent.winfo_rootx() + (parent.winfo_width() - self.winfo_reqwidth()) // 2
+        y = parent.winfo_rooty() + (parent.winfo_height() - self.winfo_reqheight()) // 2
+        self.geometry("+{}+{}".format(x, y))
+
+        customtkinter.CTkLabel(self, text=message).pack(padx=20, pady=10)
+        customtkinter.CTkButton(self, text="OK", command=self.destroy).pack(pady=10)
+
+    def on_ok(self, callback):
+        if callback:
+            callback()
+
+def show_message_box(info,message):
+        message_box = CustomMessageBox(gui, f"{info}", f"{message}", lambda:None)
+        gui.after(2000, message_box.destroy)
+
 # Find button functionality (Main Logic)
 def find_button_click():
-    
+
     # Getting the input from user typed text and splitting the input
     # Also, date, month and year are stored in seprate variables
     input_date = entry.get()
@@ -89,8 +114,22 @@ def find_button_click():
     values.append(date)
 
     # STEP 4
+    values.append(month_codes[month])
+
+    # STEP 5
+    for year_range, value in year_ranges.items():
+        if year_range[0] <= year <= year_range[1]:
+            values.append(value)
+            break
+    else:
+        print("Year not in any range.")
     
-    
+    # STEP 6
+    grand_total = sum(values)
+
+    # STEP 7
+    day_key = grand_total % 7
+    show_message_box("Information", f"It's {days[day_key]}")
     
     
 
