@@ -4,6 +4,33 @@
 import customtkinter
 from PIL import Image, ImageTk
 
+# Constants
+days = {
+    0: "Sunday",
+    1: "Monday",
+    2: "Tuesday",
+    3: "Wednesday",
+    4: "Thursday",
+    5: "Friday",
+    6: "Saturday"
+
+}
+
+month_codes = {
+    1 : 0, # January
+    2 : 3, # February
+    3 : 3, # March
+    4 : 6, # April
+    5 : 1, # May
+    6 : 4, # June
+    7 : 6, # July
+    8 : 2, # August
+    9 : 5, # September
+    10 : 0, # October
+    11 : 3, # November
+    12 : 5, # December
+}
+
 # GUI customization
 customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("dark-blue")
@@ -17,9 +44,16 @@ gui.resizable(width=False, height=False)
 
 # Find button functionality (Main Logic)
 def find_button_click():
+    
+    # Getting the input from user typed text and splitting the input
+    # Also, date, month and year are stored in seprate variables
     input_date = entry.get()
-    print(input_date)
-    # Implement the functionality for the "Find!" button using input_date
+    date = int(input_date[:2])
+    month = int(input_date[3:5])
+    year = int(input_date[6:10])
+    
+    
+    
 
 # Clear button functionality
 def clear_button_click():
