@@ -73,6 +73,23 @@ def find_button_click():
     date = int(input_date[:2])
     month = int(input_date[3:5])
     year = int(input_date[6:10])
+    last_two_digits_of_year = year % 100
+
+    # Core logic of the application
+    values = []
+
+    # STEP 1 
+    values.append(last_two_digits_of_year)
+
+    # STEP 2
+    quotient_value = last_two_digits_of_year / 4
+    values.append(quotient_value)
+
+    # STEP 3
+    values.append(date)
+
+    # STEP 4
+    
     
     
     
