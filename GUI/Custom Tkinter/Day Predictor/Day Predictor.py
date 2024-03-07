@@ -5,7 +5,8 @@ import customtkinter
 from PIL import Image, ImageTk
 
 #########################################################################
-# Constants
+# Constants, these serves in the main logic
+
 days = {
     0: "Sunday",
     1: "Monday",
@@ -53,6 +54,7 @@ year_ranges = {
 }
 
 ##########################################################
+
 # GUI customization
 customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("dark-blue")
@@ -66,11 +68,28 @@ gui.resizable(width=False, height=False)
 
 ########################################################################
 
+# All the functions definitions
+
+# Global Variables
+display_box = None
+
+# Displays the result on the screen
+def display_message(string):
+    global display_box
+    display_box = customtkinter.CTkLabel(gui, text=string, font=("Helvetica", 12), padx=10, pady=10)
+    display_box.place(x=125, y=114)
+    return display_box
+
+# Functionality to remove the Result label from the screen
+def destroy_fun():
+    global display_box
+    if display_box:
+        display_box.destroy()
+
 # Find button functionality (Main Logic)
 def find_button_click():
-
-    # Getting the input from user typed text and splitting the input
-    # Also, date, month and year are stored in seprate variables
+    
+    # Getting the input from user typed text and slicing the input
     input_date = entry.get()
     date = int(input_date[:2])
     month = int(input_date[3:5])
@@ -78,6 +97,8 @@ def find_button_click():
     last_two_digits_of_year = year % 100
 
     # Core logic of the application
+    
+    # Empty list which will be populated with some values
     values = []
 
     # STEP 1 
@@ -99,20 +120,25 @@ def find_button_click():
             values.append(value)
             break
     else:
-        print("Year not in any range.")
+        display_message("Year entered in out of range!")
+
     
     # STEP 6
     grand_total = sum(values)
 
     # STEP 7
     day_key = grand_total % 7
-    print(f"It's {days[day_key]}")
-
+    answer = days[day_key]
+    display_message(f"------ It's {answer} ------")
+    
 # Clear button functionality
 def clear_button_click():
     entry.delete(0, customtkinter.END)
-    
+    destroy_fun()
+        
 #######################################################################
+
+# GUI Widgets
 
 # Load the image
 image_path = r"GUI\Custom Tkinter\Day Predictor\images-bkgrd\bakground.png"  # Replace with the path to your image
@@ -126,9 +152,9 @@ background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
 # Create and place the entry widget
 entry_label = customtkinter.CTkLabel(gui, text="Enter Date (dd/mm/yyyy):")
-entry_label.place(x=125, y=60)
+entry_label.place(x=125, y=40)
 entry = customtkinter.CTkEntry(gui)
-entry.place(x=125, y=100)
+entry.place(x=125, y=80)
 
 # Create and place the "Find!" button
 find_button = customtkinter.CTkButton(gui, text="Find!", command=find_button_click)
