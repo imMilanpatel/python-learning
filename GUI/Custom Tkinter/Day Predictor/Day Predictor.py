@@ -66,29 +66,6 @@ gui.resizable(width=False, height=False)
 
 ########################################################################
 
-# For message box
-class CustomMessageBox(customtkinter.CTkToplevel):
-    def __init__(self, parent, title, message, callback = None):
-        super().__init__(parent)
-        self.title(title)
-
-        # Center the message box within the main window
-        parent.update_idletasks()
-        x = parent.winfo_rootx() + (parent.winfo_width() - self.winfo_reqwidth()) // 2
-        y = parent.winfo_rooty() + (parent.winfo_height() - self.winfo_reqheight()) // 2
-        self.geometry("+{}+{}".format(x, y))
-
-        customtkinter.CTkLabel(self, text=message).pack(padx=20, pady=10)
-        customtkinter.CTkButton(self, text="OK", command=self.destroy).pack(pady=10)
-
-    def on_ok(self, callback):
-        if callback:
-            callback()
-
-def show_message_box(info,message):
-        message_box = CustomMessageBox(gui, f"{info}", f"{message}", lambda:None)
-        gui.after(2000, message_box.destroy)
-
 # Find button functionality (Main Logic)
 def find_button_click():
 
@@ -129,9 +106,7 @@ def find_button_click():
 
     # STEP 7
     day_key = grand_total % 7
-    show_message_box("Information", f"It's {days[day_key]}")
-    
-    
+    print(f"It's {days[day_key]}")
 
 # Clear button functionality
 def clear_button_click():
