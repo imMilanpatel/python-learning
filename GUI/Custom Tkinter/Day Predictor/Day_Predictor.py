@@ -141,7 +141,7 @@ def clear_button_click():
 # GUI Widgets
 
 # Load the image
-image_path = r"GUI\Custom Tkinter\Day Predictor\images-bkgrd\bakground.png"  # Replace with the path to your image
+image_path = r".\images-bkgrd\bakground.png"  # Replace with the path to your image
 original_image = Image.open(image_path)
 resized_image = original_image.resize((gui_width, gui_height))
 background_image = ImageTk.PhotoImage(resized_image)
