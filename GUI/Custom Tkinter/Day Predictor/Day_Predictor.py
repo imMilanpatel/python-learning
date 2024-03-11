@@ -4,7 +4,7 @@
 import customtkinter
 from PIL import Image, ImageTk
 import os
-import math
+import sys
 
 #########################################################################
 # Constants, these serves in the main logic
@@ -143,14 +143,10 @@ def clear_button_click():
 # GUI Widgets
 
 # Load the image
-# Specify only the file name
-file_name = 'bakground.png'
-
-# Construct the full file path relative to the script
-file_path = os.path.join(os.path.dirname(__file__), 'images-bkgrd', file_name)
+image_file_path = "python-learning\GUI\Custom Tkinter\Day Predictor\images-bkgrd\bakground.png"
 
 # Fit the image on the GUI Canvas
-original_image = Image.open(file_path)
+original_image = Image.open(image_file_path)
 resized_image = original_image.resize((gui_width, gui_height))
 background_image = ImageTk.PhotoImage(resized_image)
 
