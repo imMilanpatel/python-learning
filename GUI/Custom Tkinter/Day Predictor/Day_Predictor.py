@@ -3,6 +3,8 @@
 # Imports
 import customtkinter
 from PIL import Image, ImageTk
+import os
+import math
 
 #########################################################################
 # Constants, these serves in the main logic
@@ -127,7 +129,7 @@ def find_button_click():
     grand_total = sum(values)
 
     # STEP 7
-    day_key = grand_total % 7
+    day_key = int(grand_total % 7)
     answer = days[day_key]
     display_message(f"------ It's {answer} ------")
     
@@ -141,8 +143,14 @@ def clear_button_click():
 # GUI Widgets
 
 # Load the image
-image_path = r".\images-bkgrd\bakground.png"  # Replace with the path to your image
-original_image = Image.open(image_path)
+# Specify only the file name
+file_name = 'bakground.png'
+
+# Construct the full file path relative to the script
+file_path = os.path.join(os.path.dirname(__file__), 'images-bkgrd', file_name)
+
+# Fit the image on the GUI Canvas
+original_image = Image.open(file_path)
 resized_image = original_image.resize((gui_width, gui_height))
 background_image = ImageTk.PhotoImage(resized_image)
 
