@@ -1,0 +1,24 @@
+{
+    "questions": [
+      {
+        "question": "What is the maximum number of players allowed in a standard cricket team?",
+        "answer": "11"
+      },
+      {
+        "question": "In which year did the first Cricket World Cup take place?",
+        "answer": "1975"
+      },
+      {
+        "question": "Who holds the record for the highest individual score in a One Day International (ODI) cricket match?",
+        "answer": "Rohit Sharma"
+      },
+      {
+        "question": "What does LBW stand for in cricket?",
+        "answer": "Leg Before Wicket"
+      },
+      {
+        "question": "Which country has won the most ICC Cricket World Cup titles?",
+        "answer": "Australia"
+      }
+    ]
+  }  
