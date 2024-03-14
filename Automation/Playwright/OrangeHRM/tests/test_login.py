@@ -4,13 +4,13 @@
 # Imports
 import pytest
 from playwright.sync_api import sync_playwright, expect
-from login_page import LoginPage
+from ..POM.login_page import LoginPage
 
 # Pytest fixtures
 @pytest.fixture(scope="module")
 def browser():
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
+        browser = p.chromium.launch()
         yield browser
         browser.close()
 
@@ -26,6 +26,7 @@ def login_page(page):
 
 # Function defintions (Acutal tests)
 
+# Test 1 (Valid Login Test)
 def test_login(page,login_page):
     # Step 1 Navigate to URL
     login_page.navigate_to_login_page("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
