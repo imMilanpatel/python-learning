@@ -10,7 +10,7 @@ from ..POM.login_page import LoginPage
 @pytest.fixture(scope="module")
 def browser():
     with sync_playwright() as p:
-        browser = p.chromium.launch()
+        browser = p.chromium.launch(headless=False)
         yield browser
         browser.close()
 
@@ -20,6 +20,7 @@ def page(browser):
     yield page
     page.close()
 
+# Function to initalize the class
 @pytest.fixture(scope="module")
 def login_page(page):
     return LoginPage(page)
