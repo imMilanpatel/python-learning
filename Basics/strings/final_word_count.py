@@ -10,14 +10,22 @@ output = 5
 
 '''
 
-string_input = "Hello W"
+# Function definition
+
+def last_word_count(str) -> int:
+    count = 0
+    for character in string_input[:: -1]:
+        if character != " ":
+            count += 1
+        else:
+            break
+    return count
+
+# Inputs
+string_input = "Hello World"
+print(f"Input: {string_input}")
 stripped_string = string_input.replace(" ", "")
 
-count = 0
-for characters in string_input[:: -1]:
-    if characters != " ":
-        count += 1
-    else:
-        break
-
-print(count)
+# Output
+result = last_word_count(stripped_string)
+print(f"Output: {result}")
