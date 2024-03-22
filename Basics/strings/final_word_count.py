@@ -10,7 +10,14 @@ output = 5
 
 '''
 
-string_input = "Hello World Milan"
-print(len(string_input))
+string_input = "Hello W"
 stripped_string = string_input.replace(" ", "")
-print(len(stripped_string))
+
+count = 0
+for characters in string_input[:: -1]:
+    if characters != " ":
+        count += 1
+    else:
+        break
+
+print(count)
