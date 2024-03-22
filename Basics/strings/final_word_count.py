@@ -9,3 +9,8 @@ output = 5
 (since word "World" has 5 characters, excluding spaces)
 
 '''
+
+string_input = "Hello World Milan"
+print(len(string_input))
+stripped_string = string_input.replace(" ", "")
+print(len(stripped_string))
