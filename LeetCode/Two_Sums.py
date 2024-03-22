@@ -31,7 +31,7 @@ def two_sum(nums, target):
 # Example usage:
 nums = [3,2,4]
 target = 6
-print(two_sum(nums, target))  # Output: [0, 1]
+
 
 
 
