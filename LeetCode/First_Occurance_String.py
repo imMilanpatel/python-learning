@@ -14,7 +14,14 @@ Explanation: "leeto" did not occur in "leetcode", so we return -1.
 '''
 def string_occurance(input_string, string_to_search) -> int:
     if needle in haystack:
-        return haystack.index(needle[0])
+        indices = []
+        for letters in haystack:
+            if letters == needle[0]:
+                indices.append(haystack.index(letters))
+            else:
+                pass
+        
+        return indices
     else:
         return -1
 
