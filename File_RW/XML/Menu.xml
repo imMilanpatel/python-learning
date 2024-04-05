@@ -1,0 +1,26 @@
+<Menu>
+    <MenuItem1>
+        <ItemName>Paneer Butter Masala</ItemName>
+        <Price>200.00</Price>
+    </MenuItem1>
+    <MenuItem2>
+        <ItemName>Dal Makhni</ItemName>
+        <Price>300.00</Price>
+    </MenuItem2>
+    <MenuItem3>
+        <ItemName>Butter naan</ItemName>
+        <Price>50.00</Price>
+    </MenuItem3>
+    <MenuItem4>
+        <ItemName>Garlic Naan</ItemName>
+        <Price>55.50</Price>
+    </MenuItem4>
+    <MenuItem5>
+        <ItemName>Tomato Soup</ItemName>
+        <Price>30.75</Price>
+    </MenuItem5>
+    <MenuItem6>
+        <ItemName>Manchow Soup</ItemName>
+        <Price>39.75</Price>
+    </MenuItem6>
+</Menu>
