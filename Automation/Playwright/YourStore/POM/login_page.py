@@ -1,5 +1,5 @@
 
 # UI Elements IDs
-username_box = ""
-password_box = ""
-login_button = ""
+username_box = "Email:"
+password_box = "Password:"
+login_button = "Log in"
