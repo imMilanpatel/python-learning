@@ -1,5 +1,6 @@
 # UI Elements on the Login Page of SauceDemo.com
 
-username_input_box = ''
-password_input_box = ''
-login_button = ''
+# page.locator().click() method is used
+username_input_box = "[data-test=\"username\"]"
+password_input_box = "[data-test=\"password\"]"
+login_button = "[data-test=\"login-button\"]"
