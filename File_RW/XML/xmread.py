@@ -18,7 +18,7 @@ print(menu_df)
 # Check if "item" is in the DataFrame
 has_item = f"{item}" in menu_df["ItemName"].values
 price_of_item =  menu_df.loc[menu_df['ItemName'] == f'{item}', 'Price'].values[0]
-
+print(type(has_item))
 
 # Assert if "Manchow Soup" is in the menu
 assert has_item, f"{item} is not in the menu."
