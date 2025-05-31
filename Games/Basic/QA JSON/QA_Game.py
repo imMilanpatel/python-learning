@@ -1,27 +1,33 @@
 # This python file will read the Questions from JSON file and compare it with JSON value and print the result.
 import json
+import os
 
-# Open the JSON file
-with open('python-learning\Games\Basic\QA JSON\QA.json', 'r') as file:
+# Get the directory where this script is located
+script_dir = os.path.dirname(os.path.abspath(__file__))
+json_path = os.path.join(script_dir, 'QA.json')
+
+# Open the JSON file in the same directory as the script
+with open(json_path, 'r', encoding='utf-8') as file:
     # Load the JSON content
     data = json.load(file)
 
 # Access the questions
 questions = data["questions"]
 
-# Game
-game_status = True
-while game_status:
+# Game loop
+while True:
     total = 0
     for qna in questions:
-        print("Question", qna["question"])
+        print("Question:", qna["question"])
         answer = input("Your answer: ")
-        if answer == qna["answer"]:
-            print("That's correct !")
+        if answer.strip().lower() == qna["answer"].strip().lower():
+            print("That's correct!")
             total += 1
             print(f"Your Current Score is: {total}")
         else:
             print("INCORRECT :(")
 
     print(f"Final Score: {total}")
-    game_status = False
+    play_again = input("Do you want to play again? (y/n): ")
+    if play_again.strip().lower() != 'y':
+        break
