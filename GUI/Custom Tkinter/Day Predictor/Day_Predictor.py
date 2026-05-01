@@ -61,6 +61,7 @@ year_ranges = {
 customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("dark-blue")
 gui = customtkinter.CTk()
+gui.title("Day Predictor Machine")
 gui_width = 400
 gui_height = 400
 gui_x = str(gui_width)
@@ -143,7 +144,8 @@ def clear_button_click():
 # GUI Widgets
 
 # Load the image
-image_file_path = "python-learning\GUI\Custom Tkinter\Day Predictor\images-bkgrd\bakground.png"
+script_dir = os.path.dirname(os.path.abspath(__file__))
+image_file_path = os.path.join(script_dir, "images-bkgrd", "bakground.png")
 
 # Fit the image on the GUI Canvas
 original_image = Image.open(image_file_path)
